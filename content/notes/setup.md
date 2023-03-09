@@ -4,7 +4,7 @@ tags:
 - setup
 weight: -5
 ---
-
+PLZ HELP ME
 ## Making your own Quartz
 Setting up Quartz requires a basic understanding of `git`. If you are unfamiliar, [this resource](https://resources.nwplus.io/2-beginner/how-to-git-github.html) is a great place to start!
 
