@@ -4,4 +4,4 @@ enableToc: false
 ---
 
 # Technical Information
-- [Rance IX](writeup/Rance IX)
+- [[writeup/Rance IX|Rance IX]]
