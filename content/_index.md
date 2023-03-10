@@ -4,4 +4,7 @@ enableToc: false
 ---
 
 # Technical Information
-- [[writeup/Rance IX|Rance IX]]
+[[writeup/Beat Angel Escalayer R|Beat Angel Escalayer R]]
+[[writeup/Rance IX|Rance IX]]
+[[writeup/System Virtual Machine|System VM]]
+
