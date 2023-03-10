@@ -1,4 +1,4 @@
-baseURL = "https://netori.github.io/quartz/"
+baseURL = "https://netori.io/"
 languageCode = "en-us"
 relativeURLs = false
 disablePathToLower = true
