@@ -1,14 +1,14 @@
 ---
 title: Beat Angel Escalayer R
 ---
-# Abstract
+## Abstract
 Beat Angel Escalayer R (*BEAR*) is a game made by AliceSoft, and its instructions are interprepted using Alicesoft's proprietary virtual machine (VM): [[writeup/System Virtual Machine|System]]. 
 
 *BEAR* has turn-based battles between player-controlled characters and AI opponents. After crafting an exploit for [[writeup/Rance IX|Rance IX]], I then looked at this game due to its AntiCheat features. Specfically, the AntiCheat stores an encrypted copy of data to a buffer, performs a comparison between the copy and new data, and triggers a death flag if there's an inequality, otherwise, the encrypted copy is replaced with the new data. This death flag causes the character to die on the next turn.
 
 I utilized [[writeup/System Virtual Machine#Tools|tools]] designed for the System architecture combined with my previous knowledge to craft a simple exploit for *BEAR*. Largely reminiscent of ACTk for Unity.
 
-# Decompile *ain* file
+## Decompile *ain* file
 ``` c#
 int C_INT::Get()
 {

@@ -1,12 +1,12 @@
 ---
 title: Rance IX
 ---
-# Abstract
+## Abstract
 Rance IX is a game made by AliceSoft, and its instructions are interprepted using Alicesoft's proprietary virtual machine (VM): [[writeup/System Virtual Machine|System]]. 
 
 I crafted an exploit for Rance IX by determining where and how the System interpreter fetches instructions, how these instructions are decoded, and finally writing my own scripts to rewrite how these instructions are executed.
 
-# Context
+## Context
 System is a virtual machine that interprets Alicesoft's proprietary game files (*.ain*, *.jaf*, *.jam*, etc.).
 
 ![System-Interprepter](images/system42-interprepter.png)*A graph disassembly produced by IDA of the System VM.*
@@ -17,10 +17,10 @@ A common practice in reverse-engineering virtualized malware, or virtual machine
 
 ...
 
-# Crafting the Exploit
+## Crafting the Exploit
 
 
-# Credits
+## Credits
 -   **nunuhara, kichikuou, OPNA2608, and toufuguy** - Thank you all for your work regarding Alicesoft's proprietary engine and file formats. I would not have been able to make any key analyses without the use of your tools. Thank you so much for sharing your work since I have definitely learned a lot about virtual machine architecture and the System engine. 
 -   **SomeLoliCatGirl** - Thank you for the wonderful AIN to bytecode decompiler. Your decompiler helped me tremendously with my analysis because I was able to locate where the bytecode was being interpreted and where it was being stored. As a result, I was able to craft my own custom bytecode injections, and effectively localize myself within the System VM architecture without doing much guessing.
 -   **Tim Blazytko** - Great educational video regarding analysis on VM architecture! 
