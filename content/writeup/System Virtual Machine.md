@@ -12,7 +12,7 @@ System is a process virtual machine designed by AliceSoft to increase accessibil
 ## Environment
 System is a virtual machine that interprets Alicesoft's proprietary game files (*.ain*, *.jaf*, *.jam*, etc.).
 
-![System-Interprepter](images/system42-interprepter.png)*A graph disassembly produced by IDA of the System VM.*
+![System-Interprepter](images/system42-interprepter.png)*A graph disassembly produced by IDA of a portion of the System VM.*
 
 The above graph is a portion of the System interpreter; it's a gargantuan switch-case statement (with over 100 cases), and each case pertains to a particular bytecode that the System interpreter will execute. The execution units that are assigned to a specific bytecode are commonly referred to as handlers.  
 
