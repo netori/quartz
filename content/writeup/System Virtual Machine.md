@@ -1,5 +1,5 @@
 ---
-title: System Virtual Machine
+title: "System Virtual Machine"
 aliases: System VM
 ---
 ## Abstract

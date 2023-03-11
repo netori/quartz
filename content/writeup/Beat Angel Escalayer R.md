@@ -1,5 +1,5 @@
 ---
-title: Beat Angel Escalayer R
+title: "Beat Angel Escalayer R"
 ---
 ## Abstract
 Beat Angel Escalayer R (*BEAR*) is a game made by AliceSoft, and its instructions are interprepted using Alicesoft's proprietary virtual machine (VM): [[writeup/System Virtual Machine|System]]. 

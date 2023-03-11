@@ -1,5 +1,5 @@
 ---
-title: Rance IX
+title: "Rance IX"
 ---
 ## Abstract
 Rance IX is a game made by AliceSoft, and its instructions are interpreted using Alicesoft's proprietary virtual machine (VM): [[writeup/System Virtual Machine|System4]]. 
@@ -58,10 +58,3 @@ After some more reverse-engineering, I found out where the bytecode was being st
 I didn't want to hook the execution cycle needlessly, since the game will lag. So, I created a thread to interface with these components, and if needed, locks the execution cycle to prevent any access shared resource.
 
 The script can be found [here](https://fearlessrevolution.com/viewtopic.php?f=2&t=23630&sid=9dd754c98ad76236735299b9f017dbae&start=15), just look a few posts down.
-
-## Credits
--   **nunuhara, kichikuou, OPNA2608, and toufuguy** - Thank you all for your work regarding Alicesoft's proprietary engine and file formats. I would not have been able to make any key analyses without the use of your tools. Thank you so much for sharing your work since I have definitely learned a lot about virtual machine architecture and the System engine. 
--   **SomeLoliCatGirl** - Thank you for the wonderful AIN to bytecode decompiler. Your decompiler helped me tremendously with my analysis because I was able to locate where the bytecode was being interpreted and where it was being stored. As a result, I was able to craft my own custom bytecode injections, and effectively localize myself within the System VM architecture without doing much guessing.
--   **Tim Blazytko** - Great educational video regarding analysis on VM architecture! 
--   **FamousAnos** - Thank you for the save!
--   **Darkbyte and contributors** - Obviously...
