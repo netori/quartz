@@ -10,3 +10,5 @@ enableToc: false
 
 [[writeup/System Virtual Machine|System VM]]
 
+# 言葉
+[[日本語/_日本語|日本語]]

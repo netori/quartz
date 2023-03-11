@@ -12,7 +12,7 @@ After reading through [[writeup/System Virtual Machine#System4 Analysis|System4 
 ### Inside a Handler
 Using [Cheat Engine](https://cheatengine.org/), I scanned for basic character properties (health, damage, etc.) and set watchpoints on those properties to alert any access. Changing those properties in the game triggered the watchpoint and led me to the subroutine that accessed those properties.
 
-![System-Interprepter](ranceix-vm-access.png)
+![rance-vm-access](ranceix-vm-access.png)
 *A snippet of the subroutine that accessed the character properties.*
 
 To determine how and where the subroutine belonged, I used IDA's graph analysis to display the control-flow of the function that it belonged to. 
