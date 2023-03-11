@@ -2,22 +2,38 @@
 title: Rance IX
 ---
 ## Abstract
-Rance IX is a game made by AliceSoft, and its instructions are interprepted using Alicesoft's proprietary virtual machine (VM): [[writeup/System Virtual Machine|System]]. 
+Rance IX is a game made by AliceSoft, and its instructions are interpreted using Alicesoft's proprietary virtual machine (VM): [[writeup/System Virtual Machine|System4]]. 
 
 I crafted an exploit for Rance IX by determining where and how the System interpreter fetches instructions, how these instructions are decoded, and finally writing my own scripts to rewrite how these instructions are executed.
 
-## Context
-System is a virtual machine that interprets Alicesoft's proprietary game files (*.ain*, *.jaf*, *.jam*, etc.).
+## Binary Analysis
+Reading through [[writeup/System Virtual Machine#System4 Analysis|System4 Analysis]]
 
-![System-Interprepter](images/system42-interprepter.png)*A graph disassembly produced by IDA of the System VM.*
+### Inside a Handler
+Using [Cheat Engine](https://cheatengine.org/), I scanned for basic character properties and set watchpoints to determine any access. 
 
-The above graph is a portion of the System interpreter; it's a gargantuan switch-case statement (with over 100 cases), and each case pertains to a particular bytecode that the System interpreter will execute. The execution units that are assigned to a specific bytecode are commonly referred to as handlers.  
+### Finding Entry
 
-A common practice in reverse-engineering virtualized malware, or virtual machines is to follow a process called _lifting, translating, and repackaging_; whereby, the reverse engineer determines exactly what each handler does (_lifting_), somehow convert the information into a language that the CPU and disassemblers understand (_translating_), and finally repackaging the binary (_repackaging_). It's tedious and complicated, but there already are existing tools for the System VM.
+![Rance-VM-Entry](images/ranceix-vm-entry.png)
 
-...
+### Loop
 
-## Crafting the Exploit
+```asm
+00575D20 | mov eax,dword ptr ds:[esi+224]                     |
+00575D26 | movzx ecx,word ptr ds:[eax]                        |
+00575D29 | add eax,2                                          | breakif(ecx == 0x5C)
+00575D2C | push ecx                                           |
+00575D2D | mov ecx,esi                                        |
+00575D2F | mov dword ptr ds:[esi+224],eax                     |
+00575D35 | call <rance9.vm_entry>                             |
+00575D3A | cmp dword ptr ds:[esi+234],0                       |
+00575D41 | je <rance9.vm_loop>                                |
+00575D43 | jmp rance9.575C50                                  |
+```
+
+
+## Exploit Development
+
 
 
 ## Credits
