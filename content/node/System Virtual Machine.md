@@ -19,7 +19,7 @@ The above graph is a portion of the System interpreter; it's a gargantuan switch
 A common practice in reverse-engineering virtualized malware, or virtual machines is to follow a process called _lifting, translating, and repackaging_; whereby, the reverse engineer determines exactly what each handler does (_lifting_), somehow convert the information into a language that the CPU and disassemblers understand (_translating_), and finally repackaging the binary (_repackaging_). It's tedious and complicated, but there already are existing tools for the System VM.
 
 ## System4 Analysis
-System4 is modeled after heap virtual machine architecture. It has an entry and an exit, calculations that are applied to datum located inside its memory heap, and a dispatcher to individual handlers for some inputted bytecode. These core concepts can be explained [here](https://www.youtube.com/watch?v=b6udPT79itk).
+System4 is a model of heap virtual machine architecture. It has an entry and an exit, calculations that are applied to datum located inside its memory heap, and a dispatcher to individual handlers for some inputted bytecode. These core concepts can be explained [here](https://www.youtube.com/watch?v=b6udPT79itk).
 
 ### `CJaffaVM`
 `CJaffaVM` (denoted by RTTI) is an object that governs the System virtual machine. There is only **one** instance of this object; moreover, there is always a static address that points to this instance.
@@ -42,6 +42,6 @@ The following hyperlinks lead to some insightful references to the System VM.
 - [xsystem4](https://github.com/nunuhara/xsystem4) - System4 for UNIX-like operating systems
 
 ### Uses System
-- [[Beat Angel Escalayer R]]
+- [[node/Beat Angel Escalayer R]]
 - The Rance Series
-	- [[writeup/Rance IX |Rance IX]]
+	- [[node/Rance IX |Rance IX]]

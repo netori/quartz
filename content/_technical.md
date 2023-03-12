@@ -3,8 +3,8 @@ title: "Technical Information Hub"
 ---
 ## Abstract
 This page collects technical information about things of interest.
-- [[writeup/Beat Angel Escalayer R|Beat Angel Escalayer R]]
-- [[writeup/Rance IX|Rance IX]]
-- [[writeup/System Virtual Machine|System VM]]
-- [[writeup/Future Projects]]
-- 
+- [[node/Beat Angel Escalayer R|Beat Angel Escalayer R]]
+- [[node/Rance IX|Rance IX]]
+- [[node/System Virtual Machine|System VM]]
+- [[node/Future Projects|Future Projects]]
+- [[node/Data Science|Data Science]]
