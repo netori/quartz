@@ -12,12 +12,12 @@ After reading through [[writeup/System Virtual Machine#System4 Analysis|System4 
 ### Inside a Handler
 Using [Cheat Engine](https://cheatengine.org/), I scanned for basic character properties (health, damage, etc.) and set watchpoints on those properties to alert any access. Changing those properties in the game triggered the watchpoint and led me to the subroutine that accessed those properties.
 
-![rance-vm-access](ranceix-vm-access.png)
+![[images/ranceix-vm-access.png]]
 *A snippet of the subroutine that accessed the character properties.*
 
-To determine how and where the subroutine belonged, I used IDA's graph analysis to display the control-flow of the function that it belonged to. 
+To determine how and where the subroutine belongs, I used IDA's graph analysis to display the control-flow of the subroutine's parent functionx. 
 
-![System-Interprepter](images/system42-interprepter.png)
+![[images/system42-interprepter.png]]
 *The subroutine that accessed those character properties was found somewhere in the middle.*
 
 The function is actually a gargantuan switch-case statement (with over 200 cases), and the subroutine is part of a case. After reading through some [[writeup/System Virtual Machine#Resources|resources]], this function is actually the dispatcher for the inputted bytecode from an *ain* script. The case that I was in was just a handler for the bytecode.
@@ -28,7 +28,7 @@ Respectively, they are called `VM Entry` and `VM Exit`.
 
 In this case, finding `VM Entry` is relatively easy; trace upwards to the beginning of the function.
 
-![Rance-VM-Entry](images/ranceix-vm-entry.png)
+![[images/ranceix-vm-entry.png]]
 *A snippet of `VM Entry.`*
 
 ### Execution Cycle
@@ -39,7 +39,7 @@ After finding `VM Entry`, I was curious as to how this function was called.
 
 After some debugging, this loop inputs the bytecode from the *ain* script as an argument to `VM Entry`, increments the virtual machine instruction pointer, and calls `VM Entry`. This execution continues indefinitely until there is a signal from `*(CJaffaVM + 0x234)` to exit.
 
-In C terms, this is how the execution cycle would look like....
+In C code, this is how the execution cycle would look like....
 ```c
 do
 {
@@ -55,6 +55,6 @@ while ( !*(CJaffaVM + 0x234) );
 After some more reverse-engineering, I found out where the bytecode was being stored.
 
 ## Exploit Development
-I didn't want to hook the execution cycle needlessly, since the game will lag. So, I created a thread to interface with these components, and if needed, locks the execution cycle to prevent any access shared resource.
+I didn't want to hook the execution cycle needlessly, since the game will lag. So, I created a thread to interface with these components, and if needed, locks the execution cycle to prevent any access to shared resources.
 
 The script can be found [here](https://fearlessrevolution.com/viewtopic.php?f=2&t=23630&sid=9dd754c98ad76236735299b9f017dbae&start=15), just look a few posts down.
