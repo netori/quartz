@@ -55,9 +55,9 @@ while ( !*(CJaffaVM + 0x234) );
 ```
 
 ### Bytecode Storage
-After some more reverse-engineering, I found out where the bytecode was being stored.
+After some more reverse-engineering, I found out where the bytecode was being stored. After some experimentation, It is possible to modify the bytecode in runtime.
 
-## Craft Exploit
+## Crafting the Exploit
 Since game values are stored in `CPage` instances, I created a thread to interface with these components and, if necessary, temporarily lock the execution cycle. I created a thread instead of directly hooking the execution cycle, since the game will lag.
 
-The script can be found [here](https://fearlessrevolution.com/viewtopic.php?f=2&t=23630&sid=9dd754c98ad76236735299b9f017dbae&start=15), just look a few posts down.
+The project can be found [here](https://github.com/netori/SysInternal).
